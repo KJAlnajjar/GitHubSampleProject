@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
                                   "consumerSecret": "7d8f34e322a34f772fb54490a03f633bbac8ce14"])
     }
     
-    func getOAuthGithubToken(_ serviceParameters: [String:String]){
+    private func getOAuthGithubToken(_ serviceParameters: [String:String]){
         let oauthswift = OAuth2Swift(
             consumerKey:    serviceParameters["consumerId"]!,
             consumerSecret: serviceParameters["consumerSecret"]!,
@@ -37,14 +37,24 @@ class LoginViewController: UIViewController {
         
         let state = generateState(withLength: 20)
         let _ = oauthswift.authorize(
-        withCallbackURL: URL(string: "GitHubSampleProject://oauth-callback/github")!, scope: "user,repo", state: state) { result in
-            
-            switch result {
-            case .success(let (credential, _, _)):
-                print(credential.oauthToken)
-            case .failure(let error):
-                print(error.description)
-            }
+            withCallbackURL: URL(string: "GitHubSampleProject://oauth-callback/github")!,
+            scope: "user,repo", state: state) { result in
+                
+                switch result {
+                case .success(let (credential, _, _)):
+                    print(credential.oauthToken)
+                    self.showTheTapBarViewController()
+                case .failure(let error):
+                    print(error.description)
+                    self.showAlert(for: 2, title: "Sorry, Something went wrong", message: nil)
+                }
+        }
+    }
+    
+    private func showTheTapBarViewController() {
+        if let tabViewController = storyboard!.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+            tabViewController.modalPresentationStyle = .fullScreen
+            present(tabViewController, animated: true)
         }
     }
 }

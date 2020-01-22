@@ -19,6 +19,7 @@
 		E533072023D6453600E9F49F /* GitHubSampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533071F23D6453600E9F49F /* GitHubSampleProjectTests.swift */; };
 		E533072B23D6453600E9F49F /* GitHubSampleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533072A23D6453600E9F49F /* GitHubSampleProjectUITests.swift */; };
 		E58B6C0323D79EF000002B1A /* GitHubAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B6C0223D79EF000002B1A /* GitHubAPIs.swift */; };
+		E5D5ED8A23D88A5000E606AD /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E533072A23D6453600E9F49F /* GitHubSampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSampleProjectUITests.swift; sourceTree = "<group>"; };
 		E533072C23D6453600E9F49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58B6C0223D79EF000002B1A /* GitHubAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIs.swift; sourceTree = "<group>"; };
+		E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E94014A4EA80F9BBFE5FB73E /* Pods-GitHubSampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSampleProjectTests/Pods-GitHubSampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9922DAB4BB8C86851A74254 /* Pods_GitHubSampleProject_GitHubSampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSampleProject_GitHubSampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 				E533071123D6453600E9F49F /* Assets.xcassets */,
 				E533070823D6453400E9F49F /* AppDelegate.swift */,
 				E533070A23D6453400E9F49F /* SceneDelegate.swift */,
+				E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			files = (
 				E533070D23D6453400E9F49F /* LoginViewController.swift in Sources */,
 				E533070923D6453400E9F49F /* AppDelegate.swift in Sources */,
+				E5D5ED8A23D88A5000E606AD /* UIViewControllerExtensions.swift in Sources */,
 				E533070B23D6453400E9F49F /* SceneDelegate.swift in Sources */,
 				E58B6C0323D79EF000002B1A /* GitHubAPIs.swift in Sources */,
 			);
