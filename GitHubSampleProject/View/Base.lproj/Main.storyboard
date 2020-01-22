@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--Item 2-->
+        <!--Repository-->
         <scene sceneID="bOl-g9-kZM">
             <objects>
                 <viewController id="8qQ-fq-oZO" sceneMemberID="viewController">
@@ -56,13 +56,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1N8-MV-0A9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="mTn-jy-hfv"/>
+                    <tabBarItem key="tabBarItem" title="Repository" image="RepositoryLogo" id="mTn-jy-hfv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ew-d7-sK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="462"/>
         </scene>
-        <!--Item 1-->
+        <!--Events-->
         <scene sceneID="5Dd-mQ-2ER">
             <objects>
                 <viewController id="V0Q-Kr-4A1" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="n9d-HU-tuK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="lJq-yf-3wm"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="FeedLogo" id="lJq-yf-3wm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDv-cU-0Ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,6 +98,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FeedLogo" width="32" height="32"/>
         <image name="GitHubLogoWithTitle" width="1280" height="1156"/>
+        <image name="RepositoryLogo" width="32" height="32"/>
     </resources>
 </document>
