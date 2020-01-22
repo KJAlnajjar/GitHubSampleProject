@@ -18,8 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func didPressLoginButton() {
         self.getOAuthGithubToken(["consumerId": "38bdac265be9e8815b26",
                                   "consumerSecret": "7d8f34e322a34f772fb54490a03f633bbac8ce14"])
     }
