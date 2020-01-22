@@ -43,12 +43,18 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success(let (credential, _, _)):
                     print(credential.oauthToken)
-                    self.showTheTapBarViewController()
+                    self.saveTokenAndPresentTapBar(token: credential.oauthToken)
                 case .failure(let error):
                     print(error.description)
                     self.showAlert(for: 2, title: "Sorry, Something went wrong", message: nil)
                 }
         }
+    }
+    
+    private func saveTokenAndPresentTapBar(token: String) {
+        let data = Data(from: token)
+        let _ = KeyChainService.save(key: "gitHubToken", data: data)
+        self.showTheTapBarViewController()
     }
     
     private func showTheTapBarViewController() {

@@ -65,7 +65,7 @@
         <!--Events-->
         <scene sceneID="5Dd-mQ-2ER">
             <objects>
-                <viewController id="V0Q-Kr-4A1" sceneMemberID="viewController">
+                <viewController id="V0Q-Kr-4A1" customClass="FeedViewController" customModule="GitHubSampleProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8J6-by-IZm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
