@@ -22,6 +22,7 @@
 		E573E03E23D8A5CC007146D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E03D23D8A5CC007146D1 /* FeedViewController.swift */; };
 		E573E04023D8AAEA007146D1 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E03F23D8AAEA007146D1 /* KeyChainService.swift */; };
 		E58B6C0323D79EF000002B1A /* GitHubAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B6C0223D79EF000002B1A /* GitHubAPIs.swift */; };
+		E5A412F923D9A13800CC2B04 /* MainEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A412F823D9A13800CC2B04 /* MainEventsModel.swift */; };
 		E5D5ED8A23D88A5000E606AD /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		E573E03D23D8A5CC007146D1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E573E03F23D8AAEA007146D1 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		E58B6C0223D79EF000002B1A /* GitHubAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIs.swift; sourceTree = "<group>"; };
+		E5A412F823D9A13800CC2B04 /* MainEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventsModel.swift; sourceTree = "<group>"; };
 		E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E94014A4EA80F9BBFE5FB73E /* Pods-GitHubSampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSampleProjectTests/Pods-GitHubSampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9922DAB4BB8C86851A74254 /* Pods_GitHubSampleProject_GitHubSampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSampleProject_GitHubSampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				E58B6BFE23D7895700002B1A /* Controller */,
 				E58B6C0123D79EC200002B1A /* Networking */,
 				E58B6BFD23D7895300002B1A /* utilities */,
+				E5A412F723D992D700CC2B04 /* Extensions */,
 				E533071623D6453600E9F49F /* Info.plist */,
 			);
 			path = GitHubSampleProject;
@@ -170,7 +173,6 @@
 				E533071123D6453600E9F49F /* Assets.xcassets */,
 				E533070823D6453400E9F49F /* AppDelegate.swift */,
 				E533070A23D6453400E9F49F /* SceneDelegate.swift */,
-				E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */,
 				E573E03F23D8AAEA007146D1 /* KeyChainService.swift */,
 			);
 			path = utilities;
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				E573E03923D8A459007146D1 /* MainUserDataModel.swift */,
+				E5A412F823D9A13800CC2B04 /* MainEventsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +211,14 @@
 				E58B6C0223D79EF000002B1A /* GitHubAPIs.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		E5A412F723D992D700CC2B04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5D5ED8923D88A5000E606AD /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F67319947F328EAB76EB47D5 /* Pods */ = {
@@ -468,6 +479,7 @@
 				E533070B23D6453400E9F49F /* SceneDelegate.swift in Sources */,
 				E58B6C0323D79EF000002B1A /* GitHubAPIs.swift in Sources */,
 				E573E04023D8AAEA007146D1 /* KeyChainService.swift in Sources */,
+				E5A412F923D9A13800CC2B04 /* MainEventsModel.swift in Sources */,
 				E573E03A23D8A459007146D1 /* MainUserDataModel.swift in Sources */,
 				E573E03E23D8A5CC007146D1 /* FeedViewController.swift in Sources */,
 			);

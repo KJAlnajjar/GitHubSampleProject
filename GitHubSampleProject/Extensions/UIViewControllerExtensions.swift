@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func showAlert(for duration: Int, title: String?, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
