@@ -49,7 +49,7 @@
         <!--Repository-->
         <scene sceneID="bOl-g9-kZM">
             <objects>
-                <viewController id="8qQ-fq-oZO" sceneMemberID="viewController">
+                <viewController id="8qQ-fq-oZO" customClass="RepositoriesViewController" customModule="GitHubSampleProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="clF-6O-tgI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

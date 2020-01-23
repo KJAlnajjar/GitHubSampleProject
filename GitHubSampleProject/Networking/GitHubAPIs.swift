@@ -56,4 +56,27 @@ struct GitHubAPIs {
         }).resume()
     }
     
+    static func getUserRepositories(success: @escaping ([UserRepositoriesModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let accessToken = KeyChainService.load(key: "gitHubToken")!.to(type: String.self)
+        let urlComponents = NSURLComponents(string:  mainGitHubAPI + "/user/repos")!
+
+        urlComponents.queryItems = [
+            URLQueryItem(name: "access_token", value: "\(accessToken)")
+        ]
+        
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                let jsonDecoder = JSONDecoder()
+                let responseModel = try jsonDecoder.decode([UserRepositoriesModel].self, from: data!)
+                success(responseModel)
+            } catch let error {
+                print("JSON Serialization error")
+                failure(error)
+            }
+        }).resume()
+    }
 }

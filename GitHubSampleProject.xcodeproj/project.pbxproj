@@ -18,6 +18,8 @@
 		E533071523D6453600E9F49F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E533071323D6453600E9F49F /* LaunchScreen.storyboard */; };
 		E533072023D6453600E9F49F /* GitHubSampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533071F23D6453600E9F49F /* GitHubSampleProjectTests.swift */; };
 		E533072B23D6453600E9F49F /* GitHubSampleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533072A23D6453600E9F49F /* GitHubSampleProjectUITests.swift */; };
+		E534252223D9E64700D62DF1 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534252123D9E64700D62DF1 /* RepositoriesViewController.swift */; };
+		E534252423D9E7BF00D62DF1 /* UserRepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534252323D9E7BF00D62DF1 /* UserRepositoriesModel.swift */; };
 		E573E03A23D8A459007146D1 /* MainUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E03923D8A459007146D1 /* MainUserDataModel.swift */; };
 		E573E03E23D8A5CC007146D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E03D23D8A5CC007146D1 /* FeedViewController.swift */; };
 		E573E04023D8AAEA007146D1 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573E03F23D8AAEA007146D1 /* KeyChainService.swift */; };
@@ -65,6 +67,8 @@
 		E533072623D6453600E9F49F /* GitHubSampleProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSampleProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E533072A23D6453600E9F49F /* GitHubSampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSampleProjectUITests.swift; sourceTree = "<group>"; };
 		E533072C23D6453600E9F49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E534252123D9E64700D62DF1 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		E534252323D9E7BF00D62DF1 /* UserRepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoriesModel.swift; sourceTree = "<group>"; };
 		E573E03923D8A459007146D1 /* MainUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserDataModel.swift; sourceTree = "<group>"; };
 		E573E03D23D8A5CC007146D1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E573E03F23D8AAEA007146D1 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				E533070C23D6453400E9F49F /* LoginViewController.swift */,
 				E573E03D23D8A5CC007146D1 /* FeedViewController.swift */,
+				E534252123D9E64700D62DF1 /* RepositoriesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				E573E03923D8A459007146D1 /* MainUserDataModel.swift */,
 				E5A412F823D9A13800CC2B04 /* MainEventsModel.swift */,
+				E534252323D9E7BF00D62DF1 /* UserRepositoriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,12 +479,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E534252423D9E7BF00D62DF1 /* UserRepositoriesModel.swift in Sources */,
 				E533070D23D6453400E9F49F /* LoginViewController.swift in Sources */,
 				E533070923D6453400E9F49F /* AppDelegate.swift in Sources */,
 				E5D5ED8A23D88A5000E606AD /* UIViewControllerExtensions.swift in Sources */,
 				E533070B23D6453400E9F49F /* SceneDelegate.swift in Sources */,
 				E58B6C0323D79EF000002B1A /* GitHubAPIs.swift in Sources */,
 				E573E04023D8AAEA007146D1 /* KeyChainService.swift in Sources */,
+				E534252223D9E64700D62DF1 /* RepositoriesViewController.swift in Sources */,
 				E5A412F923D9A13800CC2B04 /* MainEventsModel.swift in Sources */,
 				E573E03A23D8A459007146D1 /* MainUserDataModel.swift in Sources */,
 				E573E03E23D8A5CC007146D1 /* FeedViewController.swift in Sources */,
