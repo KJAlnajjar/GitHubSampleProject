@@ -22,7 +22,7 @@ class FeedViewController: UIViewController {
             self.getMainEvents(userName: mainUserData.login)
         }) { error in
             print(error)
-            self.showAlert()
+            self.showErrorMessageAlert()
         }
     }
     
@@ -31,13 +31,7 @@ class FeedViewController: UIViewController {
             print(mainEvents)
         }) { error in
             print(error)
-            self.showAlert()
-        }
-    }
-    
-    private func showAlert() {
-        DispatchQueue.main.async {
-            self.showAlert(for: 2, title: "Sorry, Something went wrong", message: nil)
+            self.showErrorMessageAlert()
         }
     }
 }
