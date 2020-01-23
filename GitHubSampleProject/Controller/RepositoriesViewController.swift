@@ -14,7 +14,7 @@ class RepositoriesViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     
     var userRepositories = [UserRepositoriesModel]()
-    var filterdRepositories = [UserRepositoriesModel]()
+    var filterdUserRepositories = [UserRepositoriesModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class RepositoriesViewController: UIViewController {
         self.showActivityIndicator()
         GitHubAPIs.getUserRepositories(success: { userRepositories in
             self.userRepositories = userRepositories
-            self.filterdRepositories = userRepositories
+            self.filterdUserRepositories = userRepositories
             self.reloadTableView()
             self.hideActivityIndicator()
         }) { error in
@@ -44,24 +44,28 @@ class RepositoriesViewController: UIViewController {
 
 extension RepositoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterdRepositories.count
+        return filterdUserRepositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoriesCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoriesCell", for: indexPath) as! RepositoriesTableViewCell
         
-        if filterdRepositories.count != 0 {
-            cell.textLabel?.text = filterdRepositories[indexPath.row].name
+        if filterdUserRepositories.count != 0 {
+            cell.configure(model: filterdUserRepositories[indexPath.row])
         } else {
-            cell.textLabel?.text = userRepositories[indexPath.row].name
+            cell.configure(model: userRepositories[indexPath.row])
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
     }
 }
 
 extension RepositoriesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterdRepositories = searchText.isEmpty ? userRepositories : userRepositories.filter { $0.name.contains(searchText) }
+        filterdUserRepositories = searchText.isEmpty ? userRepositories : userRepositories.filter { $0.name.contains(searchText) }
         self.reloadTableView()
     }
 }
