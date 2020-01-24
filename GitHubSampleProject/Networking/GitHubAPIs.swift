@@ -11,8 +11,9 @@ import Foundation
 struct GitHubAPIs {
     
     static let mainGitHubAPI = "https://api.github.com"
+    typealias failure = (Error) -> ()
     
-    static func getMainUserData(success: @escaping (MainUserDataModel) -> (), failure: @escaping (Error) -> ()) {
+    static func getMainUserData(success: @escaping (MainUserDataModel) -> (), failure: @escaping failure) {
         
         let accessToken = KeyChainService.load(key: "gitHubToken")!.to(type: String.self)        
         
@@ -32,7 +33,7 @@ struct GitHubAPIs {
         }).resume()
     }
     
-    static func getMainEvents(userName: String, success: @escaping ([MainEventsModel]) -> (), failure: @escaping (Error) -> ()) {
+    static func getMainEvents(userName: String, success: @escaping ([MainEventsModel]) -> (), failure: @escaping failure) {
         
         let accessToken = KeyChainService.load(key: "gitHubToken")!.to(type: String.self)
         let urlComponents = NSURLComponents(string:  mainGitHubAPI + "/users/\(userName)/events")!
@@ -56,7 +57,7 @@ struct GitHubAPIs {
         }).resume()
     }
     
-    static func getUserRepositories(success: @escaping ([UserRepositoriesModel]) -> (), failure: @escaping (Error) -> ()) {
+    static func getUserRepositories(success: @escaping ([UserRepositoriesModel]) -> (), failure: @escaping failure) {
         
         let accessToken = KeyChainService.load(key: "gitHubToken")!.to(type: String.self)
         let urlComponents = NSURLComponents(string:  mainGitHubAPI + "/user/repos")!
