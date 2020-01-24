@@ -13,7 +13,7 @@ struct UserRepositoriesModel: Codable {
     let nodeID: String
     let name: String
     let fullName: String
-    let welcomePrivate: Bool
+    let isPrivate: Bool
     let owner: Owner
     let htmlURL: String
     let welcomeDescription: String?
@@ -89,7 +89,7 @@ struct UserRepositoriesModel: Codable {
         case nodeID = "node_id"
         case name = "name"
         case fullName = "full_name"
-        case welcomePrivate = "private"
+        case isPrivate = "private"
         case owner = "owner"
         case htmlURL = "html_url"
         case welcomeDescription = "description"

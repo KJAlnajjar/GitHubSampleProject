@@ -61,6 +61,13 @@ extension RepositoriesViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        let RepositoryDetails = storyBoard.instantiateViewController(withIdentifier: "RepositoryDetailsViewController") as! RepositoryDetailsViewController
+        RepositoryDetails.repositoryData = filterdUserRepositories[indexPath.row]
+        self.navigationController?.pushViewController(RepositoryDetails, animated:true)
+    }
 }
 
 extension RepositoriesViewController: UISearchBarDelegate {
