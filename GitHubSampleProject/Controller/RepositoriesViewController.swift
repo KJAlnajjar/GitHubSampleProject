@@ -85,4 +85,8 @@ extension RepositoriesViewController: UISearchBarDelegate {
         filterdUserRepositories = searchText.isEmpty ? userRepositories : userRepositories.filter { $0.name.contains(searchText) }
         self.reloadTableView()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
