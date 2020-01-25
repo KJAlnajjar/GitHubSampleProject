@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RepositoryDetailsViewController: UIViewController {
     
@@ -26,7 +27,7 @@ class RepositoryDetailsViewController: UIViewController {
     }
     
     func initElements() {
-        self.repositoryImageView.image = Utilities.showImageFromURL(url: repositoryData.owner.avatarURL)
+        self.repositoryImageView.sd_setImage(with: URL(string: repositoryData.owner.avatarURL), placeholderImage: UIImage(named: "placeholder"))
         self.nameLabel.text = "\(repositoryData.name) is a \(repositoryData.isPrivate ? "private" : "public") repository"
         self.adminPermissionImageView.image = repositoryData.permissions.admin ? UIImage(named: "TrueLogo") : UIImage(named: "FalseLogo")
         self.pushPermissionImageView.image = repositoryData.permissions.push ? UIImage(named: "TrueLogo") : UIImage(named: "FalseLogo")

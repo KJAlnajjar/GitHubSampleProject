@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EventsTableViewCell: UITableViewCell {
     
@@ -18,7 +19,7 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
 
     func configure(model: MainEventsRealmModel) {
-//        self.repositoryImageView.image = Utilities.showImageFromURL(url: model.actor?.avatarURL ?? "")
+        self.repositoryImageView.sd_setImage(with: URL(string: model.actor?.avatarURL ?? ""), placeholderImage: UIImage(named: "placeholder"))
         self.typeLabel.text = model.type
         
         self.authorNameLabel.text = model.actor?.login ?? ""

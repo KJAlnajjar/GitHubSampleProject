@@ -9,6 +9,7 @@ target 'GitHubSampleProject' do
 
 	pod 'OAuthSwift'
   pod 'RealmSwift'
+  pod 'SDWebImage'
 
   target 'GitHubSampleProjectTests' do
     inherit! :search_paths

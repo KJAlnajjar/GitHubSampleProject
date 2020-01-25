@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RepositoriesTableViewCell: UITableViewCell {
     
@@ -18,7 +19,7 @@ class RepositoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var pullPermissionImageView: UIImageView!
 
     func configure(model: UserRepositoriesModel) {
-        self.repositoryImageView.image = Utilities.showImageFromURL(url: model.owner.avatarURL)
+        self.repositoryImageView.sd_setImage(with: URL(string: model.owner.avatarURL), placeholderImage: UIImage(named: "placeholder"))
         self.nameLabel.text = model.name
         self.adminPermissionImageView.image = model.permissions.admin ? UIImage(named: "TrueLogo") : UIImage(named: "FalseLogo")
         self.pushPermissionImageView.image = model.permissions.push ? UIImage(named: "TrueLogo") : UIImage(named: "FalseLogo")
