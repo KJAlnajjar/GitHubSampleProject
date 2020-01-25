@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     @IBAction func didPressLoginButton() {
         
         if Utilities.isConnectedToNetwork() {
+            self.showActivityIndicator()
             self.getOAuthGithubToken(["consumerId": "38bdac265be9e8815b26",
                                       "consumerSecret": "7d8f34e322a34f772fb54490a03f633bbac8ce14"])
         } else if !Utilities.isLocalDataBaseEmpty() {
@@ -74,6 +75,7 @@ class LoginViewController: UIViewController {
                     self.saveTokenAndPresentTapBar(token: credential.oauthToken)
                 case .failure(let error):
                     print(error.description)
+                    self.hideActivityIndicator()
                     self.showErrorMessageAlert()
                 }
         }
@@ -82,6 +84,7 @@ class LoginViewController: UIViewController {
     private func saveTokenAndPresentTapBar(token: String) {
         let data = Data(from: token)
         let _ = KeyChainService.save(key: "gitHubToken", data: data)
+        self.hideActivityIndicator()
         self.showTheTapBarViewController()
     }
     

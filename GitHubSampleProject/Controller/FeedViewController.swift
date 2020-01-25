@@ -21,11 +21,14 @@ class FeedViewController: UIViewController {
     }
     
     private func handleTheDataSourcce() {
+        self.showActivityIndicator()
         if Utilities.isConnectedToNetwork() {
             self.getMainUserData()
         } else {
             self.mainEvents = Utilities.getLocalData()
             self.tableView.reloadData()
+            self.hideActivityIndicator()
+            self.handleNoDataPage()
         }
     }
     
@@ -36,6 +39,7 @@ class FeedViewController: UIViewController {
             self.getMainEvents(userName: mainUserData.login)
         }) { error in
             print(error)
+            self.hideActivityIndicator()
             self.showErrorMessageAlert()
         }
     }
@@ -44,12 +48,15 @@ class FeedViewController: UIViewController {
         GitHubAPIs.getMainEvents(userName: userName, success: { mainEvents in
             print(mainEvents)
             self.mainEvents = mainEvents
+            self.handleNoDataPage()
             DispatchQueue.main.async {
                 self.saveDataToRealm(mainEvents: mainEvents)
                 self.tableView.reloadData()
             }
+            self.hideActivityIndicator()
         }) { error in
             print(error)
+            self.hideActivityIndicator()
             self.showErrorMessageAlert()
         }
     }
@@ -67,6 +74,15 @@ class FeedViewController: UIViewController {
 
             realm.deleteAll()
             realm.add(model)
+        }
+    }
+    
+    private func handleNoDataPage() {
+        if mainEvents.isEmpty || mainEvents.count == 0 {
+            DispatchQueue.main.async {
+                self.tableView.tableFooterView = UIView()
+                self.addEmptyMessageLabel()
+            }
         }
     }
 }

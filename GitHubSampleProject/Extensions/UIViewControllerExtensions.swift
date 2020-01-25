@@ -52,4 +52,14 @@ extension UIViewController {
             self.view.isUserInteractionEnabled = true
         }
     }
+    
+    func addEmptyMessageLabel() {
+        let emptyMessageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        emptyMessageLabel.font = emptyMessageLabel.font.withSize(17)
+        emptyMessageLabel.text = "There is no data available"
+        self.view.addSubview(emptyMessageLabel)
+        emptyMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyMessageLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        emptyMessageLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
 }

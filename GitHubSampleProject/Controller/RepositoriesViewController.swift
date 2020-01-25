@@ -27,11 +27,21 @@ class RepositoriesViewController: UIViewController {
             self.userRepositories = userRepositories
             self.filterdUserRepositories = userRepositories
             self.reloadTableView()
+            self.handleNoDataPage()
             self.hideActivityIndicator()
         }) { error in
             print(error)
             self.hideActivityIndicator()
             self.showErrorMessageAlert()
+        }
+    }
+    
+    private func handleNoDataPage() {
+        if filterdUserRepositories.isEmpty || filterdUserRepositories.count == 0 {
+            DispatchQueue.main.async {
+                self.tableView.tableFooterView = UIView()
+                self.addEmptyMessageLabel()
+            }
         }
     }
     
