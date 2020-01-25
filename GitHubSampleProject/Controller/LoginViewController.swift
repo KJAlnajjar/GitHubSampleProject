@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     private func handleLoginButtonTitle() {
         
         if !Utilities.isConnectedToNetwork() && Utilities.isLocalDataBaseEmpty() {
-            self.LoginMessageLabel.text = "There is no internet connection"
+            self.LoginMessageLabel.text = "There is no internet connection, Please enable the internet to be able to proceed"
             self.LoginMessageLabel.isHidden = false
             self.loginButton.isEnabled = false
         } else if Utilities.isConnectedToNetwork() {
