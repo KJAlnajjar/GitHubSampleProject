@@ -1,16 +1,26 @@
 PODS:
   - OAuthSwift (2.1.0)
+  - Realm (4.3.1):
+    - Realm/Headers (= 4.3.1)
+  - Realm/Headers (4.3.1)
+  - RealmSwift (4.3.1):
+    - Realm (= 4.3.1)
 
 DEPENDENCIES:
   - OAuthSwift
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
     - OAuthSwift
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   OAuthSwift: ab1675598273e04355e0282459c328e65c9ddacd
+  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
+  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
 
-PODFILE CHECKSUM: d949df2b56b75fc1e08a0fc4aed04d4ec6e2f3fc
+PODFILE CHECKSUM: a573b8ceaa623f0dccd30c2522de97209b78e4a6
 
 COCOAPODS: 1.8.4

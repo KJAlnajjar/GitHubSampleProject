@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct GitHubAPIs {
     
@@ -33,7 +34,7 @@ struct GitHubAPIs {
         }).resume()
     }
     
-    static func getMainEvents(userName: String, success: @escaping ([MainEventsModel]) -> (), failure: @escaping failure) {
+    static func getMainEvents(userName: String, success: @escaping ([MainEventsRealmModel]) -> (), failure: @escaping failure) {
         
         let accessToken = KeyChainService.load(key: "gitHubToken")!.to(type: String.self)
         let urlComponents = NSURLComponents(string:  mainGitHubAPI + "/users/\(userName)/events")!
@@ -48,7 +49,7 @@ struct GitHubAPIs {
         URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 let jsonDecoder = JSONDecoder()
-                let responseModel = try jsonDecoder.decode([MainEventsModel].self, from: data!)
+                let responseModel = try jsonDecoder.decode([MainEventsRealmModel].self, from: data!)
                 success(responseModel)
             } catch let error {
                 print("JSON Serialization error")
