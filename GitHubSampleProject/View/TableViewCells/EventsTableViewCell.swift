@@ -24,6 +24,6 @@ class EventsTableViewCell: UITableViewCell {
         
         self.authorNameLabel.text = model.actor?.login ?? ""
         self.messageLabel.text = model.payload?.ref ?? ""
-        self.dateLabel.text = model.createdAt
+        self.dateLabel.text = Utilities.getFormattedDate(string: model.createdAt)
     }
 }

@@ -46,4 +46,14 @@ struct Utilities {
         let OfflineDataArray = Array(OfflineData.first!.results)
         return OfflineDataArray
     }
+    
+    static func getFormattedDate(string: String) -> String{
+         let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        
+         let formateDate = dateFormatter.date(from: string)!
+         dateFormatter.dateFormat = "dd/MM/yyyy, h:mm a"
+
+         return dateFormatter.string(from: formateDate)
+     }
 }
